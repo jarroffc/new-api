@@ -15,7 +15,7 @@ module.exports = {
         return res.json({ status: false, error: 'Text parameter is required' });
       }
 
-      const buffer = await getBuffer(`https://api.siputzx.my.id/api/m/brat?text=${encodeURIComponent(text)}&isAnimated=true&delay=500`);
+      const buffer = await getBuffer(`https://skyzxu-brat.hf.space/brat-animated?text=${encodeURIComponent(text)}&isAnimated=true&delay=500`);
 
       res.writeHead(200, {
         'Content-Type': 'image/gif',
