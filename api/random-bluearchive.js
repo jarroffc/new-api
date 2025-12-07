@@ -1,16 +1,17 @@
-const axios = require('axios');
 module.exports = function(app) {
     async function bluearchive() {
         try {
-            const { data } = await axios.get(`https://raw.githubusercontent.com/rynxzyy/blue-archive-r-img/refs/heads/main/links.json`)
-            const response = await axios.get(data[Math.floor(data.length * Math.random())], { responseType: 'arraybuffer' });
-            return Buffer.from(response.data);
+            const data = await fetchJson(`https://raw.githubusercontent.com/rynxzyy/blue-archive-r-img/refs/heads/main/links.json`)
+            const response = await getBuffer(data[Math.floor(data.length * Math.random())])
+            return response
         } catch (error) {
             throw error;
         }
     }
     app.get('/random/ba', async (req, res) => {
         try {
+            const { apikey } = req.query;
+            if (!global.apikey.includes(apikey)) return res.json({ status: false, error: 'Apikey invalid' })
             const pedo = await bluearchive();
             res.writeHead(200, {
                 'Content-Type': 'image/png',
