@@ -8,7 +8,7 @@ module.exports = {
     if (!global.apikey.includes(apikey)) return res.json({ status: false, error: 'Apikey invalid' });
     if (!text) return res.json({ status: false, error: 'Missing text' });
 
-    const buffer = await getBuffer(`https://api.siputzx.my.id/api/m/brat?text=${encodeURIComponent(text)}&isAnimated=false&delay=500`);
+    const buffer = await getBuffer(`https://skyzxu-brat.hf.space/brat?text=${encodeURIComponent(text)}&isAnimated=false&delay=500`);
     res.writeHead(200, {
       'Content-Type': 'image/gif',
       'Content-Length': buffer.length,
