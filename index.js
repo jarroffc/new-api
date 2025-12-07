@@ -59,8 +59,8 @@ const settings = {
   creatorName: "@Junzz",
   apiTitle: "Junzz Api's",
   channelLink: "https://whatsapp.com/channel/0029ValyZse5a24CeQWS3x0F", 
-  githubLink: "https://whatsapp.com/channel/0029VbAbEkb5Ejy7jjjG7p3H", 
-  contactLink: "https://t.me/jarroffc2"
+  githubLink: "https://whatsapp.com", 
+  contactLink: "https://t.me/@Juna_hayanasi"
 };
 
 
