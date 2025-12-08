@@ -8,7 +8,7 @@ module.exports = function(app) {
             throw error;
         }
     }
-    app.get('/random/ba', async (req, res) => {
+    app.get('/random/ba?apikey=', async (req, res) => {
         try {
             const { apikey } = req.query;
             if (!global.apikey.includes(apikey)) return res.json({ status: false, error: 'Apikey invalid' })
