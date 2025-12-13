@@ -11,7 +11,7 @@ function msToMinutes(ms) {
 async function spotifyDownload(url) {
   if (!url) throw new Error('Link-nya mana, senpai?')
 
-  const metaResponse = await axios.post('https://spotdown.org/api/song-details', { url }, {
+  const metaResponse = await axios.post('https://spotdown.org', { url }, {
     headers: {
       'Content-Type': 'application/json',
       'Origin': 'https://spotdown.org',
@@ -24,7 +24,7 @@ async function spotifyDownload(url) {
   if (!meta || !meta.success || !meta.id)
     throw new Error('Gomen senpai! Aku gagal mengambil info lagunya')
 
-  const dlResponse = await axios.post('https://spotdown.org', { details }, {
+  const dlResponse = await axios.post('https://spotdown.org/api/song-details', { details }, {
     headers: {
       'Content-Type': 'application/json',
       'Origin': 'https://spotdown.org',
