@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const yt = {
     get baseUrl() {
         return {
-            origin: 'https://cdn401.savetube.vip'
+            origin: 'https://ytmp3.gg'
         }
     },
 
@@ -63,7 +63,7 @@ const yt = {
 
         // first hit
         let search
-        search = await this.hit('https://${cdn}/download', {
+        search = await this.hit('/api/ajax/search', {
             "query": queryOrYtUrl,
             "cf_token": "",
             "vt": "youtube"
@@ -76,7 +76,7 @@ const yt = {
             console.log(`[found]\ntitle : ${t}\nurl   : ${videoUrl}`)
 
             // first hit again...
-            search = await this.hit('https://${cdn}/v2/info', {
+            search = await this.hit('/api/ajax/search', {
                 "query": videoUrl,
                 "cf_token": "",
                 "vt": "youtube"
