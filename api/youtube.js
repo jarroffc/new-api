@@ -63,7 +63,7 @@ const yt = {
 
         // first hit
         let search
-        search = await this.hit('https://media.savetube', {
+        search = await this.hit('https://cdn400.savetube.vip', {
             "query": queryOrYtUrl,
             "cf_token": "",
             "vt": "youtube"
@@ -76,7 +76,7 @@ const yt = {
             console.log(`[found]\ntitle : ${t}\nurl   : ${videoUrl}`)
 
             // first hit again...
-            search = await this.hit('https://media.savetube', {
+            search = await this.hit('https://cdn400.savetube.vip', {
                 "query": videoUrl,
                 "cf_token": "",
                 "vt": "youtube"
