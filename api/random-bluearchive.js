@@ -9,14 +9,14 @@ module.exports = {
       return res.json({ status: false, error: 'Apikey invalid' });
     }
 
-    try {
-      const data = await fetchJson(`https://raw.githubusercontent.com/rynxzyy/blue-archive-r-img/refs/heads/main/links.json`);
-      const pedo = await bluearchive();
-
-      res.writeHead(200, {
-        'Content-Type': 'image/png',
-        'Content-Length': pedo.length
-      });
+  }
+       app.get('/random/ba?apikey', async (req, res) => {
+        try {
+            const pedo = await bluearchive();
+            res.writeHead(200, {
+                'Content-Type': 'image/png',
+                'Content-Length': pedo.length,
+            }):
       res.end(pedo);
     } catch (error) {
       res.status(500).json({ status: false, error: error.message });
