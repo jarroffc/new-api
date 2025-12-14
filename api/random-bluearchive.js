@@ -11,7 +11,7 @@ module.exports = {
 
     try {
       const data = await fetchJson(`https://raw.githubusercontent.com/rynxzyy/blue-archive-r-img/refs/heads/main/links.json`);
-      const pedo = await getBuffer(data.url);
+      const pedo = await bluearchive();
 
       res.writeHead(200, {
         'Content-Type': 'image/png',
