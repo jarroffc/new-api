@@ -137,28 +137,4 @@ module.exports = [
       }
     },
   },
-
-  {
-    name: "Ytmp4 V2",
-    desc: "Download video youtube",
-    category: "Downloader",
-    path: "/download/ytmp4v2?apikey=&url=",
-    async run(req, res) {
-      try {
-        const { apikey, url } = req.query;
-        if (!apikey || !global.apikey.includes(apikey))
-          return res.json({ status: false, error: "Apikey invalid" });
-        if (!url)
-          return res.json({ status: false, error: "Url is required" });
-
-        const results = await yt.download(url, "360p", "mp4")
-        res.status(200).json({
-          status: true,
-          result: results.dlink,
-        });
-      } catch (error) {
-        res.status(500).json({ status: false, error: error.message });
-      }
-    },
-  },
 ];
