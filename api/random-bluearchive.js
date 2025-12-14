@@ -11,13 +11,13 @@ module.exports = {
 
     try {
       const data = await fetchJson(`https://raw.githubusercontent.com/rynxzyy/blue-archive-r-img/refs/heads/main/links.json`);
-      const image = await getBuffer(data.url);
+      const pedo = await getBuffer(data.url);
 
       res.writeHead(200, {
         'Content-Type': 'image/png',
-        'Content-Length': image.length
+        'Content-Length': pedo.length
       });
-      res.end(image);
+      res.end(pedo);
     } catch (error) {
       res.status(500).json({ status: false, error: error.message });
     }
