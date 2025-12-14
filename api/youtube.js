@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const yt = {
     get baseUrl() {
         return {
-            origin: 'https://ssvid.net'
+            origin: 'https://media.savetube'
         }
     },
 
