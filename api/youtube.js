@@ -76,7 +76,7 @@ const yt = {
             console.log(`[found]\ntitle : ${t}\nurl   : ${videoUrl}`)
 
             // first hit again...
-            search = await this.hit('/api/ajax/search', {
+            search = await this.hit('/api/cdn/search', {
                 "query": videoUrl,
                 "cf_token": "",
                 "vt": "youtube"
@@ -88,7 +88,7 @@ const yt = {
         const k = this.handleFormat(userFormat, search)
 
         // second hit
-        const convert = await this.hit('/api/ajax/convert', {
+        const convert = await this.hit('/api/cdn/convert', {
             k, vid
         })
 
