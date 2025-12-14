@@ -63,7 +63,7 @@ const yt = {
 
         // first hit
         let search
-        search = await this.hit('/youtube-to-audio', {
+        search = await this.hit('https://${cdn}/download', {
             "query": queryOrYtUrl,
             "cf_token": "",
             "vt": "youtube"
@@ -76,7 +76,7 @@ const yt = {
             console.log(`[found]\ntitle : ${t}\nurl   : ${videoUrl}`)
 
             // first hit again...
-            search = await this.hit('/youtube-to-mp4', {
+            search = await this.hit('https://${cdn}/v2/info', {
                 "query": videoUrl,
                 "cf_token": "",
                 "vt": "youtube"
