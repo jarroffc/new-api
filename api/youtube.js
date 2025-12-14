@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const yt = {
     get baseUrl() {
         return {
-            origin: 'https://cdn401.savetube.vip'
+            origin: 'https://ytube.savetube.me'
         }
     },
 
