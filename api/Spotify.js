@@ -113,24 +113,20 @@ module.exports = {
     if (!global.apikey.includes(apikey)) {
       return res.json({ status: false, error: "Apikey invalid" });
     }
-            const { url } = req.query;
-            if (!url) {
-                return res.json({ status: false, error: 'Url is required' });
-            }
-        try {
-            const spotMate = new SpotMate();
-            const trackInfo = await spotMate.info(url);
-            const convertResult = await spotMate.convert(url);      
-            res.status(200).json({
-                status: true,
-                result: {
-                url: convertResult.url, 
-                title: trackInfo.album.name
-                }
-            });
-            spotMate.clear();          
-        } catch (error) {
-            res.status(500).send(`Error: ${error.message}`);
-        }
-});
-}
+
+    if (!url) {
+      return res.json({ status: false, error: "Url is required" });
+    }
+
+    try {
+      const resu = await spotMate.convert(url);
+      let dat = resu
+      res.status(200).json({
+        status: true,
+        result: dat
+      });
+    } catch (error) {
+      res.status(500).json({ status: false, error: error.message });
+    }
+  }
+};
