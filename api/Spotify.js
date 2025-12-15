@@ -11,11 +11,11 @@ function msToMinutes(ms) {
 async function spotifyDownload(url) {
   if (!url) throw new Error('Link-nya mana, senpai?')
 
-  const metaResponse = await axios.post('https://spotiydownloader.com/api/metainfo', { url }, {
+  const metaResponse = await axios.post('https://spotdown.org/api/song-details', { url }, {
     headers: {
       'Content-Type': 'application/json',
-      'Origin': 'https://spotiydownloader.com',
-      'Referer': 'https://spotiydownloader.com/id',
+      'Origin': 'https://spotdown.org',
+      'Referer': 'https://spotdown.org/api/song-details',
       'User-Agent': 'Mozilla/5.0'
     }
   })
@@ -24,7 +24,7 @@ async function spotifyDownload(url) {
   if (!meta || !meta.success || !meta.id)
     throw new Error('Gomen senpai! Aku gagal mengambil info lagunya')
 
-  const dlResponse = await axios.post('https://spotiydownloader.com/api/download', { id: meta.id }, {
+  const dlResponse = await axios.post('https://spotdown.org', { details }, {
     headers: {
       'Content-Type': 'application/json',
       'Origin': 'https://spotiydownloader.com',
