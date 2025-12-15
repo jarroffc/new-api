@@ -56,11 +56,10 @@ global.totalreq = 0;
 
 // Settings
 const settings = {
-  creatorName: "Jarr Officiall",
-  apiTitle: "Jarr X API",
-  channelLink: "https://whatsapp.com/channel/0029VaSqS3ECcW4qqmr4Rx0s", 
-  githubLink: "https://whatsapp.com/channel/0029VbAbEkb5Ejy7jjjG7p3H", 
-  contactLink: "https://t.me/jarroffc2"
+  creatorName: "@Junzz",
+  apiTitle: "Junzz Api's",
+  channelLink: "https://whatsapp.com/channel/0029ValyZse5a24CeQWS3x0F", 
+  contactLink: "https://t.me/Juna_hayanasi"
 };
 
 
