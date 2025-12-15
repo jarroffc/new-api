@@ -100,6 +100,7 @@ class SpotMate {
       'x-csrf-token': this._token,
     };
   }
+}
 
 module.exports = {
   name: "Spotify",
@@ -112,13 +113,14 @@ module.exports = {
     if (!global.apikey.includes(apikey)) {
       return res.json({ status: false, error: "Apikey invalid" });
     }
+    
     try {
             const spotMate = new SpotMate();
             const trackInfo = await spotMate.info(url);
             const convertResult = await spotMate.convert(url);      
             res.status(200).json({
                 status: true,
-                result: {
+                result: dat
                 url: convertResult.url, 
                 title: trackInfo.album.name
                 }
