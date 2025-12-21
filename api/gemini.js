@@ -6,7 +6,7 @@ const GROQ_API_KEY = Apis[Math.floor(Math.random() * Apis.length)];
 
 async function askGroqWithImage(prompt, imageUrl, model = "meta-llama/llama-4-scout-17b-16e-instruct") {
   try {
-    const response = await fetch("https://api.siputzx.my.id/api/ai/gemini", {
+    const response = await fetch("https://ai-studio.anisaofc.my.id/api/edit-image", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
